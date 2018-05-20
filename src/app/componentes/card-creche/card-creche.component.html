@@ -1,0 +1,12 @@
+<div class="mb-4 card" style="width: 18rem;">
+	<div>
+		<h5 class="card-header">
+			<a [routerLink]="['/creche', creche.id]">{{creche.nome}}</a>
+		</h5>
+	</div>
+	<div class="card-body card-text">
+		<p>Horário: {{creche.horario}}</p>
+		<p>Faixa Etária: {{creche.faixaEtaria}}</p>
+		<p>Descrição: {{creche.sobre}}</p>
+	</div>
+</div>

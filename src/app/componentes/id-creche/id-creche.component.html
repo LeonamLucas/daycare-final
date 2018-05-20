@@ -1,0 +1,52 @@
+<div class=" card shadow mb-3 border-dark">
+  <div class="card-header">
+    <h3 class="text-center">{{this.creche.nome}}</h3>
+  </div>
+
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <div class="card shadow mb-3">
+          <div class="card-header">
+            Faixa Etária:
+            <h4>{{this.creche.faixaEtaria}}</h4>
+            Telefone:
+            <h4>{{this.creche.telefone}}</h4>
+            Horários:
+            <h4>{{this.creche.horario}}</h4>
+
+          </div>
+
+
+
+
+          <div class="card-body mb-3">
+            <h3 class="card-title">Serviços</h3>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let serv of this.creche.servicos">
+                {{serv.descricao}}
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- Detalhes dos serviços -->
+      <!--div class="col-6">
+        <app-inserir-dicas (newAtividade)="onNewAtividade($event)" [selectAtividade]="selectAtividade"></app-inserir-dicas>
+      </div-->
+
+
+    </div>
+
+    <!-- Mapa com o local marcado -->
+    <div class=" mb-3 card card-body shadow">
+      <daycare-mapa [crecheLocal]="this.creche.local"></daycare-mapa>
+    </div>
+
+
+  </div>
+</div>
