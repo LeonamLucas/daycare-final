@@ -1,12 +1,13 @@
-<div class="mb-4 card" style="width: 18rem;">
-	<div>
-		<h5 class="card-header">
-			<a [routerLink]="['/creche', creche.id]">{{creche.nome}}</a>
-		</h5>
+<a [routerLink]="['/creche',creche.id]">
+	<div class="place-info-box">
+		<span class="place-info-box-icon">
+			<img [src]="creche.dirImagem" />
+		</span>
+		<div class="place-info-box-content">
+			<span class="place-info-box-text">{{creche.nome}}</span>
+			<span class="place-info-box-star">
+				<i class="fa fa-star"></i> {{creche.avaliacao}}</span>
+			<span class="place-info-box-detail">{{creche.horario}}</span>
+		</div>
 	</div>
-	<div class="card-body card-text">
-		<p>Horário: {{creche.horario}}</p>
-		<p>Faixa Etária: {{creche.faixaEtaria}}</p>
-		<p>Descrição: {{creche.sobre}}</p>
-	</div>
-</div>
+</a>

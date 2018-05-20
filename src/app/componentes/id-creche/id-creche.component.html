@@ -1,52 +1,90 @@
-<div class=" card shadow mb-3 border-dark">
-  <div class="card-header">
-    <h3 class="text-center">{{this.creche.nome}}</h3>
-  </div>
-
-
-  <div class="card-body">
+<section class="content-header">
+    <h1></h1>
+</section>
+<section class="content">
     <div class="row">
-      <div class="col-6">
-        <div class="card shadow mb-3">
-          <div class="card-header">
-            Faixa Etária:
-            <h4>{{this.creche.faixaEtaria}}</h4>
-            Telefone:
-            <h4>{{this.creche.telefone}}</h4>
-            Horários:
-            <h4>{{this.creche.horario}}</h4>
-
-          </div>
-
-
-
-
-          <div class="card-body mb-3">
-            <h3 class="card-title">Serviços</h3>
-            <ul class="list-group">
-              <li class="list-group-item" *ngFor="let serv of this.creche.servicos">
-                {{serv.descricao}}
-              </li>
-            </ul>
-          </div>
-
-
+        <div class="col-xs-12">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <i class="fa fa-institution"></i>
+                    <h3 class="box-title">{{creche?.nome}}</h3>
+                    <span class="pull-right">
+                        <i class="fa fa-star"></i> {{creche?.avaliacao}}</span>
+                </div>
+                <div class="box-body">
+                    <div class="col-md-3" *ngIf="creche">
+                        <img class="box-img-detail" [src]="creche?.dirImagem" />
+                    </div>
+                    <br>
+                    <dl class="col-md-9">
+                        <div class="col-md-4">
+                            <dt class="">
+                                <i class="fa fa-child"></i> Faixa Etária</dt>
+                            <dd>{{creche?.faixaEtaria}}</dd>
+                            <br>
+                            <dt>
+                                <i class="fa fa-calendar"></i> Horários</dt>
+                            <dd>{{creche?.horario}}</dd>
+                            <br>
+                        </div>
+                        <div class="col-md-5">
+                            <dt>
+                                <i class="fa fa-phone"></i> Fale Conosco</dt>
+                            <dd>{{creche?.telefone}}</dd>
+                            <br>
+                            <dt>
+                                <i class="fa fa-map-pin"></i> Endereço</dt>
+                            <dd>{{creche?.local.endereco | slice:0:15}}</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h2 class="box-title">Sobre o espaço</h2>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <p align="justify" style="font-size: 16px">
+                        {{creche?.sobre}}
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Detalhes dos serviços -->
-      <!--div class="col-6">
-        <app-inserir-dicas (newAtividade)="onNewAtividade($event)" [selectAtividade]="selectAtividade"></app-inserir-dicas>
-      </div-->
-
-
     </div>
-
-    <!-- Mapa com o local marcado -->
-    <div class=" mb-3 card card-body shadow">
-      <daycare-mapa [crecheLocal]="this.creche.local"></daycare-mapa>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Serviços Adicionais</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="col-md-12">
+                        <div class="col-md-6" *ngFor="let serv of this.creche.servicos">
+                            <img [src]="serv.icone"> {{serv.descricao}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-solid">
+                <div class="box-header">
+                    <span class="fa fa-location-arrow"></span> Ver Localização
+                </div>
+                <div class="box-body">
+                    <daycare-mapa [crecheLocal]="this.creche.local"></daycare-mapa>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-  </div>
-</div>
+</section>
