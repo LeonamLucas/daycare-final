@@ -3,7 +3,7 @@ import {Servico} from "../models/Servico"
 
 export interface Creche {
     id?: number
-    dirImagem: string
+    dirImagem?: string
     nome: string
     avaliacao: number
     sobre: string

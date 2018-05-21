@@ -11,14 +11,16 @@ import { CrecheComponent } from './componentes/creche/creche.component';
 import { CardCrecheComponent } from './componentes/card-creche/card-creche.component';
 import { IndexComponent } from './componentes/index/index.component';
 import { IdCrecheComponent } from './componentes/id-creche/id-creche.component';
-import { MapaComponent } from './componentes/mapa/mapa.component'
+import { MapaComponent } from './componentes/mapa/mapa.component';
+import { NewCrecheComponent } from './componentes/new-creche/new-creche.component'
 
 
 const ROUTES: Routes = [
   { path: '', component: IndexComponent },
   { path: 'creche', component: CrecheComponent },
   { path: 'creche/:id', component: IdCrecheComponent },
-  { path: 'mapa', component: MapaComponent }
+  { path: 'mapa', component: MapaComponent },
+  { path: 'new', component: NewCrecheComponent }
 ]
 
 
@@ -30,7 +32,8 @@ const ROUTES: Routes = [
     CardCrecheComponent,
     IndexComponent,
     IdCrecheComponent,
-    MapaComponent
+    MapaComponent,
+    NewCrecheComponent
   ],
   imports: [
     BrowserModule,

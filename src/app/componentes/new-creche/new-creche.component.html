@@ -1,0 +1,64 @@
+<div class="mb-3">
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <div class="card border-dark shadow mb-4">
+                <h3 class=" card-header mb-3">
+                    <span class="badge badge-pill badge-dark">1</span> Informações</h3>
+                <div class="card-body card-text mb-4">
+                    <form>
+                        <div class="form-group">
+                            <label for="nome">Nome da creche: </label>
+                            <small>
+                                <input [(ngModel)]="Cnome" class=" form-control form-control-sm" type="text" name="nome" id="nome">
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="foto">Foto:</label>
+                            <input type="file" class="form-control form-control-sm">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Sobre: </label>
+                            <small>
+                                <input [(ngModel)]="Csobre" class=" form-control form-control-sm" type="text" name="email" id="email">
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Horario: </label>
+                            <small>
+                                <input [(ngModel)]="Chorario" class=" form-control form-control-sm" type="text" name="email" id="email">
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Faixa etária: </label>
+                            <small>
+                                <input [(ngModel)]="CfaixaEtaria" class=" form-control form-control-sm" type="text" name="email" id="email">
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Telefone </label>
+                            <small>
+                                <input [(ngModel)]="Ctelefone" class=" form-control form-control-sm" type="text" name="email" id="email">
+                            </small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card shadow border-dark">
+                <h3 class="card-header mb-3">
+                    <span class="badge badge-pill badge-dark">2</span> Local</h3>
+                <daycare-mapa class="mb-3"></daycare-mapa>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="col-md-4">
+        <button (click)="addCreche()" class="btn btn-lg  btn-primary btn-dark mt-4">Concluir</button>
+        <button routerLink="/" class="btn btn-lg btn-primary btn-dark mt-4">Cancelar</button>
+    </div>
+    <br>
+</div>

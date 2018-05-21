@@ -22,4 +22,9 @@ export class CrecheService {
     return of(this.creches);
   }
 
+  addCreches(cre: Creche) {
+    this.creches.push(cre);
+    localStorage.setItem("creches", JSON.stringify(this.creches));
+  }
+
 }
